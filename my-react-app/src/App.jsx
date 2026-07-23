@@ -1,4 +1,5 @@
 import React from 'react'
+import search from './components/search.jsx'
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
          <header>
           <h1>Find The <span className='text-gradient'>Movies</span> You'll Enjoy Without The Hussle</h1>
          </header>
-         <p>Search</p>
+         <serch/>
        </div>
     </main>
   )
