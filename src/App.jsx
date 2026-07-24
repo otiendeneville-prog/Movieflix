@@ -1,9 +1,20 @@
 import React, { useEffect,useState } from 'react'
 import Search from './components/Search.jsx'
 
+
+ const API_BASE_URL='https://www.themoviedb.org/settings/api'
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const API_OPTIONS={
+    method:'GET',
+    headers:{
+      accept:'application/json',
+      Authorization:`Bearer ${API_KEY}`
+    }
+  }
+
 function App() {
   const[searchTerm, setSearchTerm] = useState("");
-  const API_BASE_URL='https://www.themoviedb.org/settings/api'
+  }
   useEffect(() =>{
 
   },deps:[]
