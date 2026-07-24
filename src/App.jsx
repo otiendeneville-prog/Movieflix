@@ -17,17 +17,18 @@ function App() {
   const[errorMessage, setErrorMessage] =useState("")
   const fetchMovies= async ()=>{
     try{
-
+      constendpoint=`${API_BASE_URL}/discover/movie?sort_popularity.desc`
+      const response = await fetch(endpoint, API_OPTIONS)
+      alert(response);
     }catch(error){
       console.log(`Error fetching Movies :${error}`)
       setErrorMessage('Error fetching Movies.Please try again later.')
     }
   }
-  }
+ 
   useEffect(() =>{
-
-  },deps:[]
-
+      fetchMovies()
+  },[]
   );
 
   
@@ -48,6 +49,6 @@ function App() {
        </div>
     </main>
   )
-}
+ }
 
 export default App
