@@ -14,6 +14,15 @@ import Search from './components/Search.jsx'
 
 function App() {
   const[searchTerm, setSearchTerm] = useState("");
+  const[errorMessage, setErrorMessage] =useState("")
+  const fetchMovies= async ()=>{
+    try{
+
+    }catch(error){
+      console.log(`Error fetching Movies :${error}`)
+      setErrorMessage('Error fetching Movies.Please try again later.')
+    }
+  }
   }
   useEffect(() =>{
 
