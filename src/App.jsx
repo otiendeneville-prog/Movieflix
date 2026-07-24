@@ -19,7 +19,10 @@ function App() {
     try{
       constendpoint=`${API_BASE_URL}/discover/movie?sort_popularity.desc`
       const response = await fetch(endpoint, API_OPTIONS)
-      alert(response);
+      if(!response.ok){
+        throw new Error('Failed to fetch movies')
+        const data = await response.json();
+      }
     }catch(error){
       console.log(`Error fetching Movies :${error}`)
       setErrorMessage('Error fetching Movies.Please try again later.')
