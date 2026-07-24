@@ -3,6 +3,14 @@ import Search from './components/Search.jsx'
 
 function App() {
   const[searchTerm, setSearchTerm] = useState("");
+  const API_BASE_URL='https://www.themoviedb.org/settings/api'
+  useEffect(() =>{
+
+  },deps:[]
+
+  );
+
+  }
   return (
     <main>
        <div className="partern"/>
