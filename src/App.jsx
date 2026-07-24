@@ -38,9 +38,12 @@ function App() {
         <img src="./hero.png" alt="Hero Banner"/>
          <header>
           <h1>Find The <span className='text-gradient'>Movies</span> You'll Enjoy Without The Hussle</h1>
-         </header>
-         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
          <h1 className='text-white'>{searchTerm}</h1>
+         </header>
+        <section className='all-movies'>
+          <h1>All Movies</h1>
+        </section>
        </div>
     </main>
   )
