@@ -30,7 +30,7 @@ function App() {
 
   );
 
-  }
+  
   return (
     <main>
        <div className="partern"/>
@@ -43,6 +43,7 @@ function App() {
          </header>
         <section className='all-movies'>
           <h1>All Movies</h1>
+          {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
         </section>
        </div>
     </main>
