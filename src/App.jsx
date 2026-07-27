@@ -26,7 +26,7 @@ function App() {
       }
     }catch(error){
       console.log(`Error fetching movies :${error}`)
-      setErrorMessage('Error fetching Movies.Please try again later.')
+      setErrorMessage('Erro searching movies.Please Try Again Later.')
     }
   }
  
