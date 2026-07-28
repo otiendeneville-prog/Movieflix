@@ -22,7 +22,7 @@ function App() {
     setErrorMessage('')
     try{
       const endpoint=`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`
-      const response = await fetch('endpoint,API_OPTIONS');
+      const response = await fetch("endpoint,API_OPTIONS");
      
       if(!response.ok){
         throw new Error('Failed to fetch movies')
@@ -36,6 +36,9 @@ function App() {
     }catch(error){
       console.log(`Error fetching movies :${error}`)
       setErrorMessage('Erro searching movies.Please Try Again Later.')
+    }
+    finally{
+      setIsLoading(false)
     }
   }
  
@@ -57,7 +60,21 @@ function App() {
          </header>
         <section className='all-movies'>
           <h1>All Movies</h1>
-          {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
+          {isLoading ?(
+            <p className='text-white'>Loading...</p>
+          )
+          :errorMessage?(
+            <p className='text-red-500'>{errorMessage}</p>
+          )
+          :(
+            <ul>
+              {movielist.map((movie) => (
+                <p className='text-white'>{movie.title}</p>
+              ))}
+            </ul>
+          )
+          
+        }
         </section>
        </div>
     </main>
