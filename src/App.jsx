@@ -19,11 +19,11 @@ function App() {
     try{
       const endpoint=`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`
       const response = await fetch('endpoint,API_OPTIONS');
-      alert('response')
-      const data = await response.json();
+     
       if(!response.ok){
         throw new Error('Failed to fetch movies')
-        
+              const data = await response.json();
+              console.log(data)
       }
     }catch(error){
       console.log(`Error fetching movies :${error}`)
