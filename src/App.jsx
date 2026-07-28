@@ -15,6 +15,7 @@ const API_BASE_URL = 'https://api.themoviedb.org/3/'
 function App() {
   const[searchTerm, setSearchTerm] = useState("");
   const[errorMessage, setErrorMessage] =useState("")
+  const[movielist,setMovieList]= useState([]);
   const fetchMovies= async ()=>{
     try{
       const endpoint=`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`
@@ -23,7 +24,9 @@ function App() {
       if(!response.ok){
         throw new Error('Failed to fetch movies')
               const data = await response.json();
-              console.log(data)
+      if (data.Response ==='False'){
+        setErrorMessage(data.Error || 'Failed to fetch movies');
+      }
       }
     }catch(error){
       console.log(`Error fetching movies :${error}`)
