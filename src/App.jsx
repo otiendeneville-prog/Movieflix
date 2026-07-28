@@ -4,6 +4,7 @@ import Search from './components/Search.jsx'
 
 const API_BASE_URL = 'https://api.themoviedb.org/3/'
   const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  console.log('API KEY:', API_KEY);
   const API_OPTIONS={
     method:'GET',
     headers:{
@@ -17,30 +18,36 @@ function App() {
   const[errorMessage, setErrorMessage] =useState("")
   const[movielist,setMovieList]= useState([]);
   const[isLoading,setIsLoading] = useState(false)
+
   const fetchMovies= async ()=>{
     setIsLoading(true)
     setErrorMessage('')
     try{
-      const endpoint=`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`
-      const response = await fetch("endpoint,API_OPTIONS");
+      const endpoint=`${API_BASE_URL}discover/movie?sort_by=popularity.desc`
+      const response = await fetch(endpoint,API_OPTIONS);
      
       if(!response.ok){
         throw new Error('Failed to fetch movies')
-              const data = await response.json();
+      }
+        const data = await response.json();
+       
       if (data.Response ==='False'){
         setErrorMessage(data.Error || 'Failed to fetch movies');
         setMovieList([])
+        return;
       }
       setMovieList(data.results || [])
-      }
+     
     }catch(error){
       console.log(`Error fetching movies :${error}`)
-      setErrorMessage('Erro searching movies.Please Try Again Later.')
+      setErrorMessage('Error searching movies.Please Try Again Later.')
     }
+
     finally{
       setIsLoading(false)
     }
   }
+ 
  
   useEffect(() =>{
       fetchMovies()
@@ -50,9 +57,9 @@ function App() {
   
   return (
     <main>
-       <div className="parttern"/>
+       <div className="pattern"/>
        <div className='wrapper'>
-        <img className='text-center w-100 h-100 ml-100'  src="./hero.png" alt="Hero Banner"/>
+        <img src="./hero.png" alt="Hero Banner"/>
          <header>
           <h1>Find The <span className='text-gradient'>Movies</span> You'll Enjoy Without The Hussle</h1>
            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
@@ -69,7 +76,7 @@ function App() {
           :(
             <ul>
               {movielist.map((movie) => (
-                <p className='text-white'>{movie.title}</p>
+                <p key={movie.id}className='text-white'>{movie.title}</p>
               ))}
             </ul>
           )
