@@ -16,6 +16,7 @@ function App() {
   const[searchTerm, setSearchTerm] = useState("");
   const[errorMessage, setErrorMessage] =useState("")
   const[movielist,setMovieList]= useState([]);
+  const[isLoading,setIsLoading] = useState(false)
   const fetchMovies= async ()=>{
     try{
       const endpoint=`${API_BASE_URL}/discover/movie?sort_by=popularity.desc`
