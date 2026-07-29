@@ -14,6 +14,8 @@ function MovieCard({movie :
             <div className='rating'>
                 <img src="star.svg" alt="Star Icon" />
                 <p>{vote_average ? vote_average.toFixed(1):'N/A'}</p>
+                <span>•</span>
+                <p className='lang'>{origin_language}</p>
             </div>
 
         </div>
