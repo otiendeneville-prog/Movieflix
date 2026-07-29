@@ -1,6 +1,5 @@
 import React, { useEffect,useState } from 'react'
 import Search from './components/Search.jsx'
-import Spinner from './spinner.jsx';
 
 
 const API_BASE_URL = 'https://api.themoviedb.org/3/'
@@ -21,7 +20,7 @@ function App() {
   const[isLoading,setIsLoading] = useState(true)
 
   const fetchMovies= async ()=>{
-    setIsLoading(true)
+    setIsLoading(false)
     setErrorMessage('')
     try{
       const endpoint=`${API_BASE_URL}discover/movie?sort_by=popularity.desc`
@@ -45,7 +44,7 @@ function App() {
     }
 
     finally{
-      setIsLoading(true)
+      setIsLoading(false)
     }
   }
  
@@ -69,7 +68,7 @@ function App() {
         <section className='all-movies'>
           <h1>All Movies</h1>
           {isLoading ?(
-            <Spinner />
+            <p className='text-white'>Loading...</p>
           )
           :errorMessage?(
             <p className='text-red-500'>{errorMessage}</p>
