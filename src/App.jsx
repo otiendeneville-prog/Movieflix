@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import Search from './components/Search.jsx'
 import Spinner from './Spinner.jsx';
+import MovieCard from './components/MovieCard.jsx';
 
 
 const API_BASE_URL = 'https://api.themoviedb.org/3/'
@@ -18,7 +19,7 @@ function App() {
   const[searchTerm, setSearchTerm] = useState("");
   const[errorMessage, setErrorMessage] =useState("")
   const[movielist,setMovieList]= useState([]);
-  const[isLoading,setIsLoading] = useState(true)
+  const[isLoading,setIsLoading] = useState(false)
 
   const fetchMovies= async ()=>{
     setIsLoading(true)
@@ -45,7 +46,7 @@ function App() {
     }
 
     finally{
-      setIsLoading(true)
+      setIsLoading(false)
     }
   }
  
@@ -67,7 +68,7 @@ function App() {
          <h1 className='text-white'>{searchTerm}</h1>
          </header>
         <section className='all-movies'>
-          <h1>All Movies</h1>
+          <h1 className="mt-40px">All Movies</h1>
           {isLoading ?(
             <Spinner />
           )
@@ -77,7 +78,7 @@ function App() {
           :(
             <ul>
               {movielist.map((movie) => (
-                <p key={movie.id}className='text-white'>{movie.title}</p>
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </ul>
           )
