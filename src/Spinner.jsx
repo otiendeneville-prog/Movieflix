@@ -4,7 +4,7 @@ export default function spinner() {
   return (
    
         <div>
-            <svg className='text-grey h-6 w-6'
+            <svg className='text-white h-6 w-6'
         xmlns="http://w3.org"
         fill="none"
         viewBox="0 0 24 24"
