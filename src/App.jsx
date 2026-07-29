@@ -67,7 +67,7 @@ function App() {
          <h1 className='text-white'>{searchTerm}</h1>
          </header>
         <section className='all-movies'>
-          <h1>All Movies</h1>
+          <h1 className="mt-20px">All Movies</h1>
           {isLoading ?(
             <Spinner />
           )
