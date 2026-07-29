@@ -1,9 +1,11 @@
 import React from 'react'
 
-function MovieCard({movie}) {
+function MovieCard({movie :
+    {title,vote_avarage,poster_path,release_date,origin_language}}) 
+{
   return (
-    <div>
-        <p key={movie.id}className='text-white'>{movie.title}</p>
+    <div className='movie-card'>
+        <p className='text-white'>{title}</p>
     </div>
   )
 }
