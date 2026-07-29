@@ -16,6 +16,10 @@ function MovieCard({movie :
                 <p>{vote_average ? vote_average.toFixed(1):'N/A'}</p>
                 <span>•</span>
                 <p className='lang'>{origin_language}</p>
+                 <span>•</span>
+                 <p className='year'>
+                    {release_date ? release_date.split('-')[0] :'N/A'}
+                 </p>
             </div>
 
         </div>
