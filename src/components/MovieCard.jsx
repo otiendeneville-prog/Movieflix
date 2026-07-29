@@ -1,7 +1,7 @@
 import React from 'react'
 
 function MovieCard({movie :
-    {title,vote_average,poster_path,release_date,origin_language}}) 
+    {title,vote_average,poster_path,release_date,original_language}}) 
 {
   return (
     <div className='movie-card'>
@@ -15,7 +15,7 @@ function MovieCard({movie :
                 <img src="star.svg" alt="Star Icon" />
                 <p>{vote_average ? vote_average.toFixed(1):'N/A'}</p>
                 <span>•</span>
-                <p className='lang'>{origin_language}</p>
+                <p className='lang'>{original_language}</p>
                  <span>•</span>
                  <p className='year'>
                     {release_date ? release_date.split('-')[0] :'N/A'}
