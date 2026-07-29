@@ -18,7 +18,7 @@ function App() {
   const[searchTerm, setSearchTerm] = useState("");
   const[errorMessage, setErrorMessage] =useState("")
   const[movielist,setMovieList]= useState([]);
-  const[isLoading,setIsLoading] = useState(true)
+  const[isLoading,setIsLoading] = useState(false)
 
   const fetchMovies= async ()=>{
     setIsLoading(true)
@@ -45,7 +45,7 @@ function App() {
     }
 
     finally{
-      setIsLoading(true)
+      setIsLoading(false)
     }
   }
  
