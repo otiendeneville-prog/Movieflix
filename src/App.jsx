@@ -57,6 +57,7 @@ function App() {
       fetchMovies(searchTerm)
   },[searchTerm]
   );
+ 
 
   
   return (
