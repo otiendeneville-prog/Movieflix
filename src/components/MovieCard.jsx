@@ -9,7 +9,7 @@ function MovieCard({movie :
       '/no-movie.png' 
     } alt={title} />
     <div className='mt-4'>
-        <h1 className='text-center w-30px h-40px'>{title}</h1>
+        <h1>{title}</h1>
         <div className='content'>
             <div className='rating'>
                 <img src="star.svg" alt="Star Icon" />
