@@ -63,7 +63,7 @@ function App() {
         const movies = await getTrendingMovies();
         setTrendingMovies(movies);
     }catch(error){
-       console.error(`Error fetching movies {$error}`);
+       console.error(`Error fetching movies ${error}`);
     }
   }
  
@@ -90,6 +90,13 @@ function App() {
          {trendingMovies.length >0 && (
           <section className='trending'>
               <h2>Trending Movies</h2>
+              <ul>
+                {trendingMovies?.map((movie, index)=>
+                 <li key={movie.$id}>
+                  <p>{index + 1}</p>
+                 </li>
+                )}
+              </ul>
           </section>
          )}
         <section className='all-movies'>
