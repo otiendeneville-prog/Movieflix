@@ -73,7 +73,9 @@ function App() {
   },[searchTerm]
   );
  
-
+ useEffect(() =>{
+  loadTrendingMovies()
+ },[]);
   
   return (
     <main>
