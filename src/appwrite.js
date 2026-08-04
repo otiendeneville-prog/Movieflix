@@ -37,3 +37,14 @@ export const updateSearchCount = async (searchTerm, movie) => {
     console.log(error);
   }
 };
+
+
+export const getTrendingMovies = async() =>{
+    try{
+
+    }catch(error){
+          console.log(error)
+    }
+
+
+}
