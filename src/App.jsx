@@ -19,6 +19,7 @@ function App() {
   const[searchTerm, setSearchTerm] = useState("");
   const[errorMessage, setErrorMessage] =useState("")
   const[movielist,setMovieList]= useState([]);
+  const[trendingMovies,setTrendingMovies] = useState([]);
   const[isLoading,setIsLoading] = useState(false)
   const[debouncedSearchTerm,setDebounceSearchTerm]=useState('')
 
@@ -55,6 +56,15 @@ function App() {
 
     finally{
       setIsLoading(false)
+    }
+  }
+  const loadTrendingMovies= async ()=>{
+    try{
+
+    }catch(error){
+       console.error(`Error fetching movies {$error}`);
+       setErrorMessage('Error fetching movies');
+
     }
   }
  
