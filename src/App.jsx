@@ -87,6 +87,11 @@ function App() {
            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
          <h1 className='text-white'>{searchTerm}</h1>
          </header>
+         {trendingMovies.length >0 && (
+          <section className='trending'>
+              <h2>Trending Movies</h2>
+          </section>
+         )}
         <section className='all-movies'>
           <h1>All Movies</h1>
           {isLoading ?(
