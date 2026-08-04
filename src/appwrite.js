@@ -16,6 +16,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
     const results = await databases.listDocuments(DATABASE_ID, TABLE_ID, [
       Query.equal('searchTerm', searchTerm)
     ]); 
+    
 
     if (results.documents.length > 0) {
       

@@ -44,7 +44,7 @@ function App() {
       }
       setMovieList(data.results || [])
 
-      if(query && data.results.legth > 0){
+      if(query && data.results.length > 0){
         await updateSearchCount(query, data.results[0]);
       }
      
