@@ -89,7 +89,7 @@ function App() {
          </header>
          {trendingMovies.length >0 && (
           <section className='trending'>
-              <h2>Trending Movies</h2>
+              <h2 className="text-50xl">Trending Movies</h2>
               <ul>
                 {trendingMovies?.map((movie, index)=>
                  <li key={movie.$id}>
