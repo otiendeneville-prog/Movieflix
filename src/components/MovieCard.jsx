@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { BrowserRouter } from 'react-router-dom';
 function MovieCard({movie :
     {title,vote_average,poster_path,release_date,original_language}}) 
 {
